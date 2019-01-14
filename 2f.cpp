@@ -1,0 +1,48 @@
+// CS 575, H.W #2F Gagandeep S Brar 
+#include <iostream>
+#include <string>
+
+using namespace std;
+// function prototype
+bool die(const string & msg);
+
+int main(){
+	float a = 0.0;
+	float b = 0.0;
+	float c = 0.0;
+	float d = 0.0; 
+	float e = 0.0;
+	float average = 0.0;
+	float naverage = 0.0;
+
+	cout << "5 scores:";
+	cin >> a;
+	cin >> b;
+	cin >> c;
+	cin >> d;
+	cin >> e;
+
+	if (!cin) die("non-numeric input");
+	if (a < 0) die("negative input");
+	if (b < 0) die("negative input");
+	if (c < 0) die("negative input");
+	if (d < 0) die("negative input");
+	if (e < 0) die("negative input");
+
+	a = (int)(a + .5);
+	b = (int)(b + .5);
+	c = (int)(c + .5);
+	d = (int)(d + .5);
+	e = (int)(e + .5);
+
+	average = (a + b + c + d + e) / 5;
+	cout << average << endl;
+
+
+}
+
+bool die(const string & msg){
+	cout << "Fatal error: " << msg << endl;
+	exit(EXIT_FAILURE);
+
+}
